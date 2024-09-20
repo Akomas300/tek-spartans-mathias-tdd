@@ -35,12 +35,16 @@ public class UserProfileTest extends ApiTestsBase {
                 .extract()
                 .response();
         ExtentTestManager.getTest().info(response1.asPrettyString());
+        String username=response1.jsonPath().getString("username");
+        Assert.assertEquals(username,string1);
+
+
 
     }
     @DataProvider(name = "profileData")
     private String[][] profileData(){
         return new String[][]{
-                {"supervisor","tek_supervisor"},
+                {"SUPERVISOR","tek_supervisor"},
                 {"operator_readonly","Tek4u2024"}
         };
     }
