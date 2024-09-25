@@ -22,14 +22,15 @@ public class ApiTestsBase extends BaseSetup {
 
     public String tokenGenerator(String username, String password) {
         TokenRequest tokenRequest = new TokenRequest(username, password);
-        return getDefaultRequest()
-                .body(tokenRequest)
-                .when()
-                .post(EndPoints.TOKEN.getValue())
-                .then()
-                .statusCode(200)
-                .extract()
-                .response()
-                .jsonPath().getString("token");
+        return "Bearer " +
+                getDefaultRequest()
+                        .body(tokenRequest)
+                        .when()
+                        .post(EndPoints.TOKEN.getValue())
+                        .then()
+                        .statusCode(200)
+                        .extract()
+                        .response()
+                        .jsonPath().getString("token");
     }
 }

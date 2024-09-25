@@ -2,7 +2,8 @@
 <suite name="Spartants TestNG Framework">
     <test name="Smoke Tests">
         <packages>
-            <package name="tek.tdd.tests" />
+            <package name="tek.tdd.api.test" />
+            <package name="tek.tdd.tests"/>
         </packages>
     </test>
 </suite>

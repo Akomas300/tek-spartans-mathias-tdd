@@ -12,7 +12,7 @@ public class UserProfileTest extends ApiTestsBase {
     public void userProfileTest(String string1,String string2){
        String token1 = tokenGenerator(string1,string2);
         Response response1 = getDefaultRequest()
-                .header("Authorization", "Bearer " + token1)
+                .header("Authorization", token1)
                 .when()
                 .get(EndPoints.USER_PROFILE.getValue())
                 .then()
